@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_03_171928) do
+ActiveRecord::Schema.define(version: 2020_09_05_183506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,19 +28,21 @@ ActiveRecord::Schema.define(version: 2020_09_03_171928) do
     t.string "hero_name", null: false
     t.string "hero_class", null: false
     t.boolean "on_duty", default: false, null: false
-    t.string "location"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["hero_name"], name: "index_heroes_on_hero_name", unique: true
   end
 
   create_table "threats", force: :cascade do |t|
     t.string "name", null: false
-    t.string "location"
     t.boolean "active", default: false, null: false
     t.string "level", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["name"], name: "index_threats_on_name", unique: true
   end
 

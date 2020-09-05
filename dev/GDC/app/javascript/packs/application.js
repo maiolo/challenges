@@ -31,9 +31,15 @@ import "bootstrap";
 const socket = io('https://zrp-challenge-socket.herokuapp.com');
 
   socket.on('occurrence', (data) => {
-    console.log(data.location[0].lat, data.location[0].lng);
+    console.log(data.location[0]);
     console.log(data.dangerLevel);
     console.log(data.monsterName);
+    $.ajax({
+      type: "POST",
+      url: "/threats/",
+      data: {threat: {name: data.monsterName, latitude: data.location[0].lat, longitude: data.location[0].lng, level: data.dangerLevel, active: "true"} },
+    });
+    console.log("dados inseridos")
   });
 
 document.addEventListener('turbolinks:load', () => {
