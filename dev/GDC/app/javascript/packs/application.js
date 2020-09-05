@@ -28,6 +28,14 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
+const socket = io('https://zrp-challenge-socket.herokuapp.com');
+
+  socket.on('occurrence', (data) => {
+    console.log(data.location[0].lat, data.location[0].lng);
+    console.log(data.dangerLevel);
+    console.log(data.monsterName);
+  });
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
