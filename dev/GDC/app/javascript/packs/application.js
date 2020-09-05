@@ -28,6 +28,20 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
+const socket = io('https://zrp-challenge-socket.herokuapp.com');
+
+  socket.on('occurrence', (data) => {
+    console.log(data.location[0]);
+    console.log(data.dangerLevel);
+    console.log(data.monsterName);
+    $.ajax({
+      type: "POST",
+      url: "/threats/",
+      data: {threat: {name: data.monsterName, latitude: data.location[0].lat, longitude: data.location[0].lng, level: data.dangerLevel, active: "true"} },
+    });
+    console.log("dados inseridos")
+  });
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
