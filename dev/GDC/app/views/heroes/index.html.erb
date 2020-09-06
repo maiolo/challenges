@@ -1,0 +1,7 @@
+<div>
+  <h1> Lista de Heróis </h1>
+
+  <% @heroes.each do |hero| %>
+    <%= render "shared/hero_card", hero: hero %>
+  <% end %>
+</div>

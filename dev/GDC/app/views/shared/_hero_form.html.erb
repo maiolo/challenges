@@ -1,0 +1,6 @@
+<%= simple_form_for (@hero), url: heroes_path do |f| %>
+  <%= f.input :hero_name, label: "Nome do Herói" %>
+  <%= f.input :hero_class, label: "Rank de Classificação do Herói", collection: ['S','A','B','C'] %>
+  <%= f.input :photo, as: :file, label: "Foto do Herói" %>
+  <%= f.submit "Enviar dados"%>
+<% end %>
