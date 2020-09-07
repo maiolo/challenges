@@ -23,6 +23,8 @@ class ThreatsController < ApplicationController
   end
 
   def update
+    @threat = Threat.update(threat_params)
+    @threat.save
   end
 
   def destroy
