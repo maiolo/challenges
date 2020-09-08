@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <div class="hero-ID">
+        <div class="hero-picture">
+          <% if @hero.photo.attached? %>
+            <%= link_to (cl_image_tag @hero.photo.key, height: 150, width: 200, crop: :fill),  hero_path(@hero) %>
+          <% else %>
+            <%= link_to (image_tag "placeholder.jpg", height: 150, width: 200, crop: :fill),  hero_path(@hero) %>
+          <% end %>
+        </div>
+        <div class="hero-data">
+          <p><b>Nome:</b> <%= @hero.hero_name %></p>
+          <p><b>Classe:</b> <%= @hero.hero_class %> </p> 
+        </div>
+      </div>
+        <div class="hero-threats">
+          <h2>Ameaças contidas</h2>
+          <ul>
+          <% @hero.threats.each do |threat| %>
+            <div class='hero-threat'>
+              <li><%= threat.name %>
+            </div>
+          <% end %>
+          </ul>
+        </div>
+    </div>
+  </div>
+</div>

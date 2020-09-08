@@ -1,0 +1,31 @@
+.main-banner{
+  background-image: url(asset_path("banner-world-map.jpg"));
+  background-repeat: no-repeat, repeat;
+  background-size: cover;
+  height: 365px;
+  text-align: center;
+  h1 {
+    color: white;
+    font-weight: bolder;
+    position: relative;
+    top: 30%;
+    text-shadow: 1px 1px 5px black;
+  }
+}
+
+.cards-container{
+  display: flex;
+  justify-content: space-around;
+  .card-home{
+    height: 265px;
+    margin: 10px 20px;
+    width: 210px;
+    box-shadow: 1px 2px 5px black;
+    position: relative;
+    padding: 17px;
+    text-align: center;
+  }
+  img {
+    margin: 10px auto;
+  }
+}

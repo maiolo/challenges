@@ -1,2 +1,24 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class = "main-banner">
+  <h1> GDC <br>
+  (Global Defense Center) </h1>
+</div>
+<div class="cards-container">
+  <div class="card-home">
+    <%= image_tag "world_icon.png", height: 150, width: 150, crop: :fill %> 
+    <div class="card-text">
+      <p>Nosso Mundo não é mais o mesmo</p>
+    </div>
+  </div>
+  <div class="card-home">
+    <%= image_tag "monster-icon.png", height: 150, width: 150, crop: :fill %> 
+    <div class="card-text">
+      <p>Diversas ameaças tentam nos distruir</p>
+    </div>
+  </div>
+  <div class="card-home">
+    <%= image_tag "hero_icon.png", height: 150, width: 150, crop: :fill %> 
+    <div class="card-text">
+      <p>Por isso, temos heróis para nos proteger</p>
+    </div>
+  </div>
+</div>
