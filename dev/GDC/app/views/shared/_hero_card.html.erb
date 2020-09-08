@@ -1,11 +1,11 @@
 <div class="hero_card">
   <h3 class="hero_title"> <%= hero.hero_name %> </h3>
   <div class="hero_picture">
-    <h2 class="hero_class <%= hero.hero_class %>"> <%= hero.hero_class %> </h2>
+    <h2 class="hero_class <%= hero.hero_class.downcase %>"> <%= hero.hero_class %> </h2>
     <% if hero.photo.attached? %>
-      <%= link_to (cl_image_tag hero.photo.key, height: 150, width: 200, crop: :fill),  hero_path(hero) %>
+      <%= link_to (cl_image_tag hero.photo.key, height: 130, width: 180, crop: :fill),  hero_path(hero) %>
     <% else %>
-      <%= link_to (image_tag "placeholder.jpg", height: 150, width: 200, crop: :fill),  hero_path(hero) %>
+      <%= link_to (image_tag "placeholder.jpg", height: 130, width: 180, crop: :fill),  hero_path(hero) %>
     <% end %>
   </div>
 </div>

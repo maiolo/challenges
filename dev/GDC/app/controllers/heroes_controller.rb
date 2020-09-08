@@ -1,4 +1,5 @@
 class HeroesController < ApplicationController
+  before_action :set_hero, only: [:show, :destroy, :edit]
 
   def index
     @heroes = Hero.all
