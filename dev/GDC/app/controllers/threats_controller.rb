@@ -14,6 +14,7 @@ class ThreatsController < ApplicationController
       @threat = Threat.new(threat_params)
       @threat.save
     end
+    Hero.allocate_hero(@threat)
   end
 
   def edit
