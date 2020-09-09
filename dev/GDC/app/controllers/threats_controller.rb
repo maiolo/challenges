@@ -1,19 +1,19 @@
 class ThreatsController < ApplicationController
   skip_before_action :authenticate_user!
-  before_action :set_threat, only: [:edit, :show, :destroy]
+  before_action :set_threat, only: [:edit, :destroy]
 
   def index
     @threats = Threat.all
   end
 
   def create
-    if Threat.exists?(name: threat_params[:name])
-      @threat = Threat.find_by(name: threat_params[:name])
-      update
-    else
+    # if Threat.exists?(name: threat_params[:name])
+    #   @threat = Threat.find_by(name: threat_params[:name])
+    #   update
+    # else
       @threat = Threat.new(threat_params)
       @threat.save
-    end
+    # end
     Hero.allocate_hero(@threat)
   end
 
