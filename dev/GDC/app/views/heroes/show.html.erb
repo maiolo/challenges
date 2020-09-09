@@ -12,6 +12,7 @@
         <div class="hero-data">
           <p><b>Nome:</b> <%= @hero.hero_name %></p>
           <p><b>Classe:</b> <%= @hero.hero_class %> </p> 
+          <%= link_to "Editar Herói", edit_hero_path(@hero)%>
         </div>
       </div>
         <div class="hero-threats">

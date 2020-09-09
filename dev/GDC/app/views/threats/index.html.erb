@@ -1,0 +1,30 @@
+<div class='container'>
+  <h1>Ameaças ativas</h1>
+  <table class="table">
+    <tr>
+      <th>Ameaça</th>
+      <th>Nivel de Ameaça</th>
+      <th>Status da Ameaça</th>
+      <th>Herói</th>
+      <th>Rank do Herói</th>
+    </tr>
+  <% @threats.each do |threat| %>
+    <tr>
+      <td><%= threat.name %></td>
+      <td><%= threat.level %></td>
+      <% if threat.active %>
+        <td> Ativa </td>
+      <% else %>
+        <td> Inativa </td>
+      <% end %>
+      <% if threat.heroes %>
+        <td><%= link_to threat.heroes.last.hero_name, hero_path(threat.heroes.last) %> </td>
+        <td><%= threat.heroes.last.hero_class %>
+      <% else %>
+        <td> Sem Herói alocado </td>
+        <td> -- </td>
+      <%end%>
+    </tr>
+  <% end %>
+  </table>
+</div>
